@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz",
+      "phone": "1-770-736-8031 x56442",
+      "website": "hildegard.org"
+    },
+    {
+      "id": 2,
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "email": "Shanna@melissa.tv"
+    },
+    {
+      "id": 10,
+      "name": "Clementina DuBuque",
+      "username": "Moriah.Stanton",
+      "email": "Rey.Padberg@karina.biz"
+    },
+    {
+      "name": "Alex Mendes",
+      "username": "alex",
+      "email": "mendes.develop@gmail.com",
+      "id": 11
+    },
+    {
+      "name": "Talia",
+      "username": "Talia coder",
+      "email": "talia@gmail.com",
+      "id": 12
+    },
+    {
+      "name": "Justin",
+      "username": "Justin coder",
+      "email": "justin@gmail.com",
+      "id": 13
+    },
+    {
+      "name": "Mark",
+      "username": "Mark coder",
+      "email": "markcoder@gmail.com",
+      "id": 14
+    },
+    {
+      "name": "julio",
+      "username": "Julio coder",
+      "email": "juliocoder@gmail.com",
+      "id": 15
+    },
+    {
+      "name": "Cesar",
+      "username": "Cesar coder",
+      "email": "Cesarcoder@gmail.com",
+      "id": 16
+    }
+  ]
+}
