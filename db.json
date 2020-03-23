@@ -15,18 +15,6 @@
       "email": "Shanna@melissa.tv"
     },
     {
-      "id": 10,
-      "name": "Clementina DuBuque",
-      "username": "Moriah.Stanton",
-      "email": "Rey.Padberg@karina.biz"
-    },
-    {
-      "name": "Alex Mendes",
-      "username": "alex",
-      "email": "mendes.develop@gmail.com",
-      "id": 11
-    },
-    {
       "name": "Talia",
       "username": "Talia coder",
       "email": "talia@gmail.com",
@@ -51,10 +39,28 @@
       "id": 15
     },
     {
-      "name": "Cesar",
-      "username": "Cesar coder",
-      "email": "Cesarcoder@gmail.com",
-      "id": 16
+      "name": "Alex Mendes",
+      "username": "james",
+      "email": "mendes.develop@gmail.com",
+      "id": 18
+    },
+    {
+      "name": "Alex Mendes",
+      "username": "New User",
+      "email": "mendes.develop@gmail.com",
+      "id": 19
+    },
+    {
+      "name": "Richard`",
+      "username": "Rick",
+      "email": "Richard@gmail.com",
+      "id": 20
+    },
+    {
+      "name": "new user `",
+      "username": "New User",
+      "email": "newuser@gmail.com",
+      "id": 21
     }
   ]
 }

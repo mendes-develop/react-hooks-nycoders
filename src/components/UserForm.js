@@ -1,76 +1,66 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { useState, useEffect, useContext} from "react";
+import {UserContext} from './UserContext'
+
 import { Container, Button } from "react-bootstrap";
+// import PropTypes from "prop-types";
 
-export default class UserForm extends Component {
-  state = {
-    name: "",
-    username: "",
-    email: ""
-  };
+export default function UserForm() {
 
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
+  const [username, setUsername] = useState('')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
 
-  
+  const [handleAddUser] = useContext(UserContext)
 
-  render() {
+  useEffect(()=>{
+    console.log("form re-rendering")
+  })
 
-      // const {name, username, email} = this.state
-
-    return (
-      <Container>
-        <form
-          onSubmit={e =>
-            this.props.addUser(
-              e,
-              this.state.name,
-              this.state.username,
-              this.state.email
-            )
-          }
-        >
-
+  return (
+    <Container>
+      <form
+        onSubmit={e =>
+            handleAddUser(
+            e,
+            name,
+            username,
+            email
+          )
+        }
+      >
         <label>Username</label>
         <input
           type="text"
-          value={this.state.username}
+          value={username}
           name="username"
           placeholder="username"
-          onChange={(e)=>this.handleChange(e)}
+          onChange={e => setUsername(e.target.value)}
         />
 
-          <label>Name</label>
-          <input
-            type="text"
-            value={this.state.name}
-            name="name"
-            placeholder="name"
-            onChange={(e)=>this.handleChange(e)}
-          />
+        <label>Name</label>
+        <input
+          type="text"
+          value={name}
+          name="name"
+          placeholder="name"
+          onChange={e => setName(e.target.value)}
+        />
 
-          <label>Email</label>
-          <input
-            type="text"
-            value={this.state.email}
-            name="email"
-            placeholder="email"
-            onChange={(e)=>this.handleChange(e)}
-          />
+        <label>Email</label>
+        <input
+          type="text"
+          value={email}
+          name="email"
+          placeholder="email"
+          onChange={e => setEmail(e.target.value)}
+        />
 
-          <Button type="submit">
-            Submit
-          </Button>
-        </form>
-      
-      </Container>
-    );
-  }
+        <Button type="submit">Submit</Button>
+      </form>
+    </Container>
+  );
 }
 
-UserForm.propTypes = {
-  addUser: PropTypes.func.isRequired
-};
+// UserForm.propTypes = {
+//   addUser: PropTypes.func.isRequired
+// };
