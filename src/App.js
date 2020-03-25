@@ -1,12 +1,21 @@
 import React from "react";
+
+// child components
 import UsersContainer from "./components/UsersContainer";
 import UserForm from "./components/UserForm";
+
+// Bootstrap
 import { Container } from "react-bootstrap";
 
 class App extends React.Component {
+
   state = {
     users: []
   };
+  
+  componentDidMount() {
+    this.getUsers();
+  }
 
   // HANDLE EVENT FUNCTIONS
   handleAddUser = (e, name, username, email) => {
@@ -23,9 +32,6 @@ class App extends React.Component {
   };
   
 
-  componentDidMount() {
-    this.getUsers();
-  }
 
   render() {
     return (
@@ -40,7 +46,8 @@ class App extends React.Component {
 
   //GET
   getUsers = () => {
-    fetch("http://localhost:3004/users")
+    fetch("http://localhost:3004/users") // (function(response){ response.json() })
+
       .then(resp => resp.json())
       .then(usersOBJ => {
         this.setState({
@@ -65,7 +72,7 @@ class App extends React.Component {
       .then(resp => resp.json())
       .then(user => {
         this.setState({
-          users: [...this.state.users, user]
+          users: [...this.state.users, user] // this.state.users.concat(users)
         });
       });
   };

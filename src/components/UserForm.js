@@ -16,10 +16,10 @@ export default class UserForm extends Component {
   };
 
   
-
   render() {
 
       // const {name, username, email} = this.state
+      // console.log(this.props)
 
     return (
       <Container>
