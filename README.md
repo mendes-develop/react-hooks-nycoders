@@ -37,6 +37,9 @@ How the useEffect Hook lets you add side effects to your function components. An
 
 ### If we have time:
 
+### Context API and useContext
+React Context API is a way to essentially create global variables that can be passed around in a React app. This is the alternative to "prop drilling", or passing props from grandparent to parent to child, and so on. Context is often touted as a simpler, lighter solution to using Redux for state management.
+
 ## useMemo
 In React, memoization optimizes our components, avoiding complex re-rendering when it isn’t intended. useMemo has a similar usage in preventing unnecessary re-renders.
 
