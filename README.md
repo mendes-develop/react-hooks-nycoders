@@ -1,52 +1,66 @@
+# react-hooks-nycoders
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+> npm:
 
-### `yarn start`
+```
+% cd [project directory]
+% npm install
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> yarn:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```
+% cd [project directory]
+% yarn
+```
 
+## Execution
 
+> npm:
 
-Install db.json package globally in your computer
+```
+% cd [project directory]
+% npm start
+```
 
-### sudo npm install -g json-server
+> yarn:
 
-### `json-server --watch db.json --port 3004`
+```
+% cd [project directory]
+% yarn start
+```
 
-Starts the json server on port 3004.<br />
+## URLs
 
-Resources
-http://localhost:3004/users
+- [Front-End](http://localhost:3000)
+- [Back-End](http://localhost:3004/users)
 
-<br />
+## React Hooks
 
-### React Hooks
+Hooks allows you to add state and other React features to functional components. We'll learn how to take an existing React app with class components, refactor it to functional components and implement the use of Hooks.
 
-The marketing pitch for Hooks is that they allow you to add state and other React features to function components. In reality, they're much more than that. We'll learn how to take an existing React app with class components, refactor it to functional components and implement the use of Hooks.
+### What we'll learn:
 
-### What we'll learn
+#### useState
 
-## useState
-How the useState Hook allows you to add state to function components. 
+How the useState Hook allows you to add state to function components.
 
-## useEffect
+#### useEffect
+
 How the useEffect Hook lets you add side effects to your function components. And replace lifecycle methods like: componentDidMount, componentDidUpdate and componentWillUnmount.
 
+### and, if we have time:
 
+#### Context API and useContext
 
-### If we have time:
-
-## Context API and useContext
 React Context API is a way to essentially create global variables that can be passed around in a React app. This is the alternative to "prop drilling", or passing props from grandparent to parent to child, and so on. Context is often touted as a simpler, lighter solution to using Redux for state management.
 
-## useMemo
+#### useMemo
+
 In React, memoization optimizes our components, avoiding complex re-rendering when it isn’t intended. useMemo has a similar usage in preventing unnecessary re-renders.
 
-## useRef
+#### useRef
+
 Accessing the DOM nodes or React elements.
