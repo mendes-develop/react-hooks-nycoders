@@ -1,14 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 //styling
 import { Card, Container, Button } from "react-bootstrap";
 
-export default class DisplayUser extends Component {
+export default function DisplayUser(props){
   //access props and display each element on its own div
 
-  render() {
-    const { deleteUser, user } = this.props;
+    const { deleteUser, user } = props;
 
     return (
       <Card style={{ width: "18rem", margin: "5px" }}>
@@ -23,7 +22,7 @@ export default class DisplayUser extends Component {
         </Container>
       </Card>
     );
-  }
+  
 }
 
 DisplayUser.propTypes = {

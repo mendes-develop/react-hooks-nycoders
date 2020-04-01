@@ -1,26 +1,26 @@
-import React, { Component } from "react";
+import React from "react";
 import DisplayUser from "./DisplayUser";
 import PropTypes from "prop-types";
 
 //styling
 import { Container, Row } from "react-bootstrap";
 
-export default class UsersContainer extends Component {
-  render() {
+export default function UsersContainer(props){
+  
     return (
       <Container>
         <Row>
-          {this.props.users.map(user => (
+          {props.users.map(user => (
             <DisplayUser
               user={user}
-              deleteUser={this.props.deleteUser}
+              deleteUser={props.deleteUser}
               key={user.id}
             />
           ))}
         </Row>
       </Container>
     );
-  }
+  
 }
 
 UsersContainer.propTypes = {

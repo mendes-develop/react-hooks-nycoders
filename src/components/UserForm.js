@@ -1,22 +1,22 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Container, Button } from "react-bootstrap";
 
-export default class UserForm extends Component {
-  state = {
-    name: "",
-    username: "",
-    email: ""
-  };
+export default function UserForm(props){
+  // state = {
+  //   name: "",
+  //   username: "",
+  //   email: ""
+  // };
+  const [name, setName] = useState('')
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
 
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
-  
-  render() {
+  // handleChange = e => {
+  //   this.setState({
+  //     [e.target.name]: e.target.value
+  //   });
+  // };
 
       // const {name, username, email} = this.state
       // console.log(this.props)
@@ -25,11 +25,11 @@ export default class UserForm extends Component {
       <Container>
         <form
           onSubmit={e =>
-            this.props.addUser(
+            props.addUser(
               e,
-              this.state.name,
-              this.state.username,
-              this.state.email
+              name,
+              username,
+              email
             )
           }
         >
@@ -37,28 +37,28 @@ export default class UserForm extends Component {
         <label>Username</label>
         <input
           type="text"
-          value={this.state.username}
+          value={username}
           name="username"
           placeholder="username"
-          onChange={(e)=>this.handleChange(e)}
+          onChange={(e)=>setUsername(e.target.value)}
         />
 
           <label>Name</label>
           <input
             type="text"
-            value={this.state.name}
+            value={name}
             name="name"
             placeholder="name"
-            onChange={(e)=>this.handleChange(e)}
+            onChange={(e)=>setName(e.target.value)}
           />
 
           <label>Email</label>
           <input
             type="text"
-            value={this.state.email}
+            value={email}
             name="email"
             placeholder="email"
-            onChange={(e)=>this.handleChange(e)}
+            onChange={(e)=>setEmail(e.target.value)}
           />
 
           <Button type="submit">
@@ -68,7 +68,7 @@ export default class UserForm extends Component {
       
       </Container>
     );
-  }
+  
 }
 
 UserForm.propTypes = {
