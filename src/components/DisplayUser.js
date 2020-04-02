@@ -1,5 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, {useContext} from "react";
+import {UserContext} from '../context/userContext'
+// import PropTypes from "prop-types";
 
 //styling
 import { Card, Container, Button } from "react-bootstrap";
@@ -7,7 +8,9 @@ import { Card, Container, Button } from "react-bootstrap";
 export default function DisplayUser(props){
   //access props and display each element on its own div
 
-    const { deleteUser, user } = props;
+  const {handleDelete} = useContext(UserContext)
+
+    const { user } = props;
 
     return (
       <Card style={{ width: "18rem", margin: "5px" }}>
@@ -16,7 +19,7 @@ export default function DisplayUser(props){
           <p>Name:{user.name}</p>
           <p>Email:{user.email}</p>
 
-          <Button variant="danger" onClick={() => deleteUser(user.id)}>
+          <Button variant="danger" onClick={() => handleDelete(user.id)}>
             Delete User
           </Button>
         </Container>
@@ -25,7 +28,7 @@ export default function DisplayUser(props){
   
 }
 
-DisplayUser.propTypes = {
-  user: PropTypes.object.isRequired,
-  deleteUser: PropTypes.func.isRequired
-};
+// DisplayUser.propTypes = {
+//   user: PropTypes.object.isRequired,
+//   deleteUser: PropTypes.func.isRequired
+// };

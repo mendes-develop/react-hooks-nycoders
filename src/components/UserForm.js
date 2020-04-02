@@ -8,6 +8,7 @@ export default function UserForm(props){
   //   username: "",
   //   email: ""
   // };
+  // console.log(this)
   const [name, setName] = useState('')
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
