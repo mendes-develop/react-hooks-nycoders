@@ -1,37 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Container, Button } from "react-bootstrap";
 
-export default function UserForm(props){
-  // state = {
-  //   name: "",
-  //   username: "",
-  //   email: ""
-  // };
-  // console.log(this)
-  const [name, setName] = useState('')
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
 
-  // handleChange = e => {
-  //   this.setState({
-  //     [e.target.name]: e.target.value
-  //   });
-  // };
+export default class UserForm extends React.Component{
 
-      // const {name, username, email} = this.state
-      // console.log(this.props)
+  state = {
+    name: "",
+    username: "",
+    email: ""
+  }
+
+  handleChange = (evt) => {
+    this.setState({
+      [evt.target.name] : evt.target.value
+    }) 
+  }
+
+  handleSubmit = (evt) =>{
+    const {handleAddUser} = this.props;
+    const {name, username, email} = this.state
+
+    handleAddUser(
+      evt,
+      name,
+      username,
+      email
+    )
+
+    this.setState({
+      name: "",
+      username: "",
+      email: ""
+    })
+
+
+  }
+
+  
+  render(){
+
+    const {name, username, email} = this.state
 
     return (
       <Container>
         <form
-          onSubmit={e =>
-            props.addUser(
-              e,
-              name,
-              username,
-              email
-            )
+          onSubmit={evt =>
+           this.handleSubmit(evt)
           }
         >
 
@@ -41,7 +56,7 @@ export default function UserForm(props){
           value={username}
           name="username"
           placeholder="username"
-          onChange={(e)=>setUsername(e.target.value)}
+          onChange={(evt)=> this.handleChange(evt)}
         />
 
           <label>Name</label>
@@ -50,7 +65,7 @@ export default function UserForm(props){
             value={name}
             name="name"
             placeholder="name"
-            onChange={(e)=>setName(e.target.value)}
+            onChange={(evt)=> this.handleChange(evt)}
           />
 
           <label>Email</label>
@@ -59,7 +74,7 @@ export default function UserForm(props){
             value={email}
             name="email"
             placeholder="email"
-            onChange={(e)=>setEmail(e.target.value)}
+            onChange={(evt)=> this.handleChange(evt)}
           />
 
           <Button type="submit">
@@ -69,9 +84,11 @@ export default function UserForm(props){
       
       </Container>
     );
+
+  }
   
 }
 
 UserForm.propTypes = {
-  addUser: PropTypes.func.isRequired
+  handleAddUser: PropTypes.func.isRequired
 };

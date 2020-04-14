@@ -1,33 +1,27 @@
-import React, {useContext} from "react";
+import React from "react";
 import DisplayUser from "./DisplayUser";
 import PropTypes from "prop-types";
-import {UserContext} from "../context/userContext"
-
 //styling
 import { Container, Row } from "react-bootstrap";
 
-export default function UsersContainer(props){
+export default class UsersContainer extends React.Component {
+  render() {
 
-  const {users, handleDelete} = useContext(UserContext)
+    const { users, handleDelete } = this.props;
 
-  
     return (
       <Container>
         <Row>
-          {users.map(user => (
-            <DisplayUser
-              user={user}
-              deleteUser={handleDelete}
-              key={user.id}
-            />
+          {users.map((user) => (
+            <DisplayUser user={user} handleDelete={handleDelete} key={user.id} />
           ))}
         </Row>
       </Container>
     );
-  
+  }
 }
 
 UsersContainer.propTypes = {
-  deleteUser: PropTypes.func.isRequired,
-  users: PropTypes.array.isRequired
+  handleDelete: PropTypes.func.isRequired,
+  users: PropTypes.array.isRequired,
 };
