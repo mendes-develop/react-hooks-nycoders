@@ -1,26 +1,36 @@
-import React from "react";
+import React, {useState, useContext} from "react";
+import {UserContext} from '../context/userContext'
 import PropTypes from "prop-types";
 import { Container, Button } from "react-bootstrap";
 
 
-export default class UserForm extends React.Component{
+export default function UserForm(props){
 
-  state = {
-    name: "",
-    username: "",
-    email: ""
-  }
+  // const [state, setState] = useState({name: "", username: "", email: ""})
 
-  handleChange = (evt) => {
-    this.setState({
-      [evt.target.name] : evt.target.value
-    }) 
-  }
+  const [name, setName] = useState("")
+  const [username, setUsername] = useState("")
+  const [email, setEmail] = useState("")
 
-  handleSubmit = (evt) =>{
-    const {handleAddUser} = this.props;
-    const {name, username, email} = this.state
+  const {handleAddUser} = useContext(UserContext)
 
+
+
+  // state = {
+  //   name: "Alex",
+  //   username: "Mendes",
+  //   email: ""
+  // }
+
+  // handleChange = (evt) => {
+  //   setState({
+  //     [evt.target.name] : evt.target.value
+  //   }) 
+  // }
+
+  const handleSubmit = (evt) =>{
+    // const {handleAddUser} = props;
+ 
     handleAddUser(
       evt,
       name,
@@ -28,25 +38,26 @@ export default class UserForm extends React.Component{
       email
     )
 
-    this.setState({
-      name: "",
-      username: "",
-      email: ""
-    })
+    // this.setState({
+    //   name: "",
+    //   username: "",
+    //   email: ""
+    // })
 
+    setName("")
+    setUsername("")
+    setEmail("")
 
   }
 
-  
-  render(){
 
-    const {name, username, email} = this.state
+    // const {name, username, email} = this.state
 
     return (
       <Container>
         <form
           onSubmit={evt =>
-           this.handleSubmit(evt)
+           handleSubmit(evt)
           }
         >
 
@@ -56,7 +67,7 @@ export default class UserForm extends React.Component{
           value={username}
           name="username"
           placeholder="username"
-          onChange={(evt)=> this.handleChange(evt)}
+          onChange={(evt)=> setUsername(evt.target.value)}
         />
 
           <label>Name</label>
@@ -65,7 +76,7 @@ export default class UserForm extends React.Component{
             value={name}
             name="name"
             placeholder="name"
-            onChange={(evt)=> this.handleChange(evt)}
+            onChange={(evt)=> setName(evt.target.value)}
           />
 
           <label>Email</label>
@@ -74,7 +85,7 @@ export default class UserForm extends React.Component{
             value={email}
             name="email"
             placeholder="email"
-            onChange={(evt)=> this.handleChange(evt)}
+            onChange={(evt)=> setEmail(evt.target.value)}
           />
 
           <Button type="submit">
@@ -85,7 +96,6 @@ export default class UserForm extends React.Component{
       </Container>
     );
 
-  }
   
 }
 

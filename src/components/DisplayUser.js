@@ -1,14 +1,21 @@
-import React from "react";
+import React, {useEffect} from "react";
 import PropTypes from "prop-types";
 //styling
 import { Card, Container, Button } from "react-bootstrap";
 
-export default class DisplayUser extends React.Component{
+export default function DisplayUser(props){
   //access props and display each element on its own div
+  
+    const { user, handleDelete } = props;
 
-  render(){
+    useEffect(()=>{ //componentDidmount, componentWillUnmount
+      console.log("Display user component")
 
-    const { user, handleDelete } = this.props;
+      return ()=> {
+        console.log(user)
+      }
+
+    },[])
 
       return (
         <Card style={{ width: "18rem", margin: "5px" }}>
@@ -24,7 +31,6 @@ export default class DisplayUser extends React.Component{
         </Card>
       );
 
-    }
   
 }
 

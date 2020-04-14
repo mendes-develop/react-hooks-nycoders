@@ -1,18 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Leanne Graham",
-      "username": "Bret",
-      "email": "Sincere@april.biz"
-    },
-    {
-      "id": 2,
-      "name": "Ervin Howell",
-      "username": "Antonette",
-      "email": "Shanna@melissa.tv"
-    },
-    {
       "id": 3,
       "name": "Clementine Bauch",
       "username": "Samantha",
@@ -71,6 +59,18 @@
       "username": "Michele",
       "email": "Mifuin@gmail.com",
       "id": 19
+    },
+    {
+      "name": "Alex Mendes",
+      "username": "ALEX MENDES BARRETO",
+      "email": "mendes.develop@gmail.com",
+      "id": 22
+    },
+    {
+      "name": "Alex Mendes",
+      "username": "ALEX MENDES BARRETO",
+      "email": "mendes.develop@gmail.com",
+      "id": 23
     }
   ]
 }
